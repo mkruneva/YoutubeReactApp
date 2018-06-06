@@ -1,13 +1,14 @@
 import React from 'react';
+import VideoListItem from './video-list-item'
 
 const VideoList = (props) => {
-    // const videos = props.videos;
+    const videoItems = props.videos.map((video)=>{
+        return <VideoListItem video={video} />
+    })
+
     return (
         <ul className="col-md-4 list-group">
-            <li>{props.videos.length}</li>
-            {/* {videos.map(i => {
-                return <li>{i}</li>
-            })} */}
+            {videoItems}
         </ul>
     );
 }
